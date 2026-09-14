@@ -1,0 +1,14 @@
+{
+  "name": "sara-pragya",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev:web": "pnpm --filter @sara-pragya/web dev",
+    "build:web": "pnpm --filter @sara-pragya/web build",
+    "lint:web": "pnpm --filter @sara-pragya/web lint",
+    "typecheck:web": "pnpm --filter @sara-pragya/web typecheck",
+    "test:web": "pnpm --filter @sara-pragya/web test",
+    "test:web:coverage": "pnpm --filter @sara-pragya/web test:coverage"
+  }
+}
