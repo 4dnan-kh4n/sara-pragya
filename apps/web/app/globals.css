@@ -407,9 +407,9 @@ button, summary { font: inherit; }
   .mobile-navigation nav > a:not(.button) { padding: .65rem; }
   .hero-grid { grid-template-columns: 1fr; gap: 4rem; }
   .desktop-hero-orbit { display: none; }
-  .hero-title-stage { position: relative; isolation: isolate; overflow: clip; }
+  .hero-title-stage { position: relative; isolation: isolate; }
   .hero-title-stage h1 { position: relative; z-index: 1; }
-  .mobile-hero-orbit { display: block; position: absolute; left: 50%; top: 50%; width: min(90vw, 31rem); max-width: none; translate: -50% -50%; filter: opacity(.55); pointer-events: none; }
+  .mobile-hero-orbit { display: block; position: absolute; left: 50%; top: 50%; width: min(90vw, 31rem); max-width: none; translate: -50% -50%; filter: opacity(.7); pointer-events: none; }
   .mobile-hero-orbit .orbit-core, .mobile-hero-orbit .orbit-caption { display: none; }
   .pillar-grid, .principle-grid { grid-template-columns: 1fr; }
   .pillar { min-height: 13rem; }
