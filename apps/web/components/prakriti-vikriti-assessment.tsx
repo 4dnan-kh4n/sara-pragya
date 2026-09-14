@@ -33,7 +33,6 @@ export function PrakritiVikritiAssessment({ onBack, onContinue }: { onBack?: () 
   if (stage === "result") {
     return <section className="assessment-workspace" aria-labelledby="dosha-results-title">
       <div className="assessment-profile-heading"><h2 id="dosha-results-title">Recorded observation profile</h2><div className="assessment-profile-actions">{onBack && <button className="assessment-restart" onClick={onBack} type="button"><ArrowLeft aria-hidden="true" /> Back to Sāratā</button>}<button className="assessment-restart" onClick={restart} type="button"><RotateCcw aria-hidden="true" /> Start again</button>{onContinue && <button className="button button-primary" onClick={() => onContinue({ prakritiPattern: classifyPrakriti(prakritiQuestions, prakritiAnswers), vikritiProfile: profile })} type="button">Continue to symptoms <ArrowRight aria-hidden="true" /></button>}</div></div>
-      <p className="assessment-context-note">This is a transparent record of selected patterns. It is not a diagnosis or a validated clinical classification.</p>
       <div className="dosha-result-summary"><span>Preliminary Prakṛti pattern</span><strong>{classifyPrakriti(prakritiQuestions, prakritiAnswers)}</strong></div>
       <h3 className="dosha-results-heading">Current Vikṛti observation profile</h3>
       <div className="sarata-profile-list" aria-label="Current Vikṛti score profile">{profile.map((item) => <article className="sarata-profile-row" key={item.dosha}><div className="sarata-profile-label"><strong>{item.dosha}</strong><span>{item.score} points</span></div><div aria-label={`${item.dosha}: ${item.percentage}%`} aria-valuemax={100} aria-valuemin={0} aria-valuenow={item.percentage} className="sarata-score-track" role="progressbar"><span style={{ width: `${item.percentage}%` }} /></div><output>{item.percentage}%</output></article>)}</div>
@@ -43,8 +42,8 @@ export function PrakritiVikritiAssessment({ onBack, onContinue }: { onBack?: () 
   const isPrakriti = stage === "prakriti";
   const title = isPrakriti ? "Long-term Prakṛti observations" : "Current Vikṛti observations";
   const guidance = isPrakriti
-    ? "Choose the pattern most consistent across adult life. Do not base this section on temporary symptoms."
-    : "Choose the pattern most noticeable in the current period. Record the closest observation without inferring a diagnosis.";
+    ? "Choose the pattern most consistent across adult life."
+    : "Choose the pattern most noticeable in the current period.";
   const count = Object.keys(answers).length;
   return <section className="assessment-workspace" aria-labelledby="dosha-assessment-heading">
     <div className="assessment-topline"><div><span className="assessment-kicker">Assessment {isPrakriti ? "02" : "03"} of 09</span><h2 id="dosha-assessment-heading">{title}</h2></div><span className="assessment-draft-status">{count} of {questions.length} recorded</span></div>

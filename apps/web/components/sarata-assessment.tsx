@@ -122,7 +122,7 @@ export function SarataAssessment({ onContinue }: { onContinue?: (profile: Return
         </div>
         <span className="assessment-draft-status">{completedCount} of {sarataQuestions.length} recorded</span>
       </div>
-      <p className="assessment-context-note">Record what is observed or reported in this encounter. The selected points are research observations, not diagnostic scores.</p>
+      <p className="assessment-context-note">Record what is observed or reported in this encounter.</p>
 
       <div aria-label={`Question ${currentQuestion + 1} of ${sarataQuestions.length}`} aria-valuemax={sarataQuestions.length} aria-valuemin={0} aria-valuenow={currentQuestion + 1} className="assessment-progress" role="progressbar">
         <span style={{ width: `${((currentQuestion + 1) / sarataQuestions.length) * 100}%` }} />

@@ -5,20 +5,20 @@ export default function PrivacyPolicyPage() {
     <RouteShell
       eyebrow="Legal"
       title="Privacy Policy"
-      description="A starter privacy page for SARA-PRAGYA. It should be legally reviewed before the platform collects or processes personal or health information."
+      description="How SARA-PRAGYA handles personal and health information."
     >
-      <section className="container disclaimer-page legal-page">
+      <section className="container legal-page">
         <article>
           <h2>Privacy-first development</h2>
-          <p>SARA-PRAGYA is being developed for responsible research and clinical decision support. The platform must not process personal or health information beyond the purpose clearly communicated to the user.</p>
+          <p>SARA-PRAGYA processes personal and health information only for the purpose shown when it is collected.</p>
         </article>
         <article>
           <h2>Data and consent</h2>
-          <p>Before collecting personal or health information in production, SARA-PRAGYA will publish a legally reviewed notice explaining what is collected, why it is used, how long it is retained, and the available consent and access choices.</p>
+          <p>Data use, retention, consent, and access choices are documented alongside collected information.</p>
         </article>
         <article>
           <h2>Security and review</h2>
-          <p>Access to research and clinical information should be limited to authorised users, with appropriate safeguards and auditability. This starter policy must be completed against the deployed technical and operational controls.</p>
+          <p>Access to research and clinical information is limited to authorised users with safeguards and audit trails.</p>
         </article>
         <article>
           <h2>Contact</h2>

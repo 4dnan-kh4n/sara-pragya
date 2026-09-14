@@ -18,12 +18,6 @@ const questions = [
       "SARA-PRAGYA is a research and clinical decision-support foundation for studying possible relationships between Dhātu Sāratā observations and verified physiological or clinical information.",
   },
   {
-    value: "diagnosis",
-    question: "Is Dhātu Sāratā an independent diagnostic test?",
-    answer:
-      "No. Dhātu Sāratā is considered alongside the wider clinical picture. The platform is not intended to replace examination, laboratory interpretation, clinical judgement, or diagnosis by a qualified healthcare professional.",
-  },
-  {
     value: "data",
     question: "What information can be considered in the research pathway?",
     answer:
@@ -34,12 +28,6 @@ const questions = [
     question: "How is human review kept in the workflow?",
     answer:
       "Each stage is explicit: information is recorded, checked by an authorised reviewer, and only then made available for correlation or research interpretation. Unverified and missing information remains visible.",
-  },
-  {
-    value: "governance",
-    question: "How will future AI and research outputs be governed?",
-    answer:
-      "Future models, scores, prompts, and calculated correlations are intended to carry clear versioning, evidence status, and audit trails so their origin and limits can be understood during review.",
   },
 ];
 

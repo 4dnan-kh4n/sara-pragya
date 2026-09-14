@@ -122,7 +122,7 @@ button, summary { font: inherit; }
 .landing-about { border-top: 1px solid var(--line); }
 .section-intro { max-width: none; }
 .section-intro > * { max-width: 50rem; }
-.section-intro h2, .workflow-heading h2, .research-grid h2 { margin: 0; font-size: clamp(2.45rem, 5vw, 4.7rem); line-height: 1; letter-spacing: -.055em; }
+.section-intro h2, .workflow-heading h2 { margin: 0; font-size: clamp(2.45rem, 5vw, 4.7rem); line-height: 1; letter-spacing: -.055em; }
 .section-intro > p { max-width: 48rem; color: var(--muted); font-size: 1.1rem; margin: 1.5rem 0 0; }
 .pillar-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 1rem; margin-top: 3.5rem; }
 .about-pillar-interaction { position: relative; display: flex; align-items: center; min-height: 72vh; padding-block: 3.5rem; box-sizing: border-box; }
@@ -154,8 +154,8 @@ button, summary { font: inherit; }
 .workflow-node strong { color: var(--ivory); font-size: 1.25rem; line-height: 1; }
 .workflow-timeline-card { max-width: 26rem; padding: 1.5rem; background: rgba(10,11,17,.78); border: 1px solid rgba(245,244,238,.1); border-radius: 1rem; box-shadow: 0 16px 42px rgba(0,0,0,.15); transition: border-color .25s ease, box-shadow .25s ease, background .25s ease; }
 .workflow-timeline-card.is-focused { border-color: rgba(231,185,107,.56); background: rgba(28,24,39,.9); box-shadow: 0 20px 52px rgba(0,0,0,.28), 0 0 34px rgba(231,185,107,.1); }
-.hero-sarata-loop { display: inline-flex; min-width: 5.75em; overflow: hidden; vertical-align: baseline; color: #e1e4eb; perspective: 500px; text-shadow: 0 0 1.8rem rgba(225,228,235,.12); white-space: nowrap; }
-.hero-sarata-loop > span { display: inline-block; }
+.hero-sarata-loop { display: inline-grid; min-width: 5.75em; overflow: hidden; vertical-align: baseline; color: #e1e4eb; perspective: 500px; text-shadow: 0 0 1.8rem rgba(225,228,235,.12); white-space: nowrap; }
+.hero-sarata-loop > span { grid-area: 1 / 1; }
 .workflow-timeline-card h3 { margin: .45rem 0 .55rem; color: var(--ivory); font-size: 1.4rem; line-height: 1.1; }
 .workflow-timeline-card p { margin: 0; color: var(--muted); line-height: 1.55; }
 .vertical-workflow li:nth-child(odd) .workflow-timeline-card { grid-column: 1; grid-row: 1; justify-self: end; text-align: right; }
@@ -165,11 +165,6 @@ button, summary { font: inherit; }
 .workflow-result span { color: var(--teal); font-size: .78rem; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
 .workflow-result strong { font-size: 1.2rem; }
 
-.landing-research { background: linear-gradient(120deg, #090a11, #11101c 55%, #0b1118); }
-.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-.research-principles { display: grid; gap: 0; border-top: 1px solid var(--line); }
-.research-principles p { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; align-items: baseline; margin: 0; padding: 1.35rem 0; color: #d4d5dc; border-bottom: 1px solid var(--line); }
-.research-principles span { color: var(--gold); font-size: .75rem; font-weight: 850; letter-spacing: .12em; }
 .landing-faq { background: #080a11; border-top: 1px solid var(--line); }
 .faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 6rem; align-items: start; }
 .faq-intro { position: sticky; top: 7rem; }
@@ -183,20 +178,6 @@ button, summary { font: inherit; }
 .faq-trigger[data-expanded] .faq-chevron { transform: rotate(90deg); }
 .faq-content { overflow: hidden; transform-origin: left top; }
 .faq-content p { max-width: 44rem; margin: 0; padding: 0 1.5rem 1.5rem 2.15rem; color: var(--muted); line-height: 1.7; }
-.landing-disclaimer { padding-top: 0; }
-.disclaimer { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 1.2rem; padding: 1.6rem; background: linear-gradient(115deg, rgba(91,214,197,.11), rgba(154,124,255,.14)); border: 1px solid var(--line-strong); border-radius: var(--radius); }
-.disclaimer-icon { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--teal); color: #07100f; font-weight: 900; }
-.disclaimer strong { display: block; }
-.disclaimer p { margin: .3rem 0 0; color: #c5c9d2; }
-.disclaimer-details { margin-top: 1.5rem; }
-.disclaimer-tabs { display: flex; flex-wrap: wrap; gap: .55rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(245,244,238,.13); }
-.disclaimer-tabs button { padding: .6rem .82rem; border: 1px solid rgba(245,244,238,.12); border-radius: .55rem; background: rgba(5,6,10,.24); color: var(--muted); font-size: .82rem; font-weight: 750; transition: background .2s ease, border-color .2s ease, color .2s ease; }
-.disclaimer-tabs button:hover, .disclaimer-tabs button.is-active { border-color: rgba(91,214,197,.58); background: rgba(91,214,197,.14); color: var(--ivory); }
-.disclaimer-panel { min-height: 8.2rem; overflow: hidden; }
-.disclaimer-panel section { padding: 1.15rem 0 .2rem; }
-.disclaimer-details h3 { margin: 0; color: var(--ivory); font-size: .92rem; }
-.disclaimer-details p { margin-top: .55rem; font-size: .92rem; line-height: 1.55; }
-.disclaimer.compact { grid-template-columns: auto 1fr; margin-top: 2.5rem; }
 
 .route-shell { min-height: 70vh; background: var(--paper); padding-bottom: 5rem; }
 .route-intro { padding-top: 7rem; padding-bottom: 4.5rem; }
@@ -318,10 +299,7 @@ button, summary { font: inherit; }
 .report-list { display: grid; gap: .7rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .report-list li { display: flex; align-items: flex-start; gap: .6rem; color: #d9dbe2; }
 .report-list svg { flex: 0 0 auto; width: 1rem; margin-top: .35rem; color: var(--teal); }
-.report-method p { margin: .55rem 0 0; color: var(--muted); }
 .research-dashboard { display: grid; gap: 1.25rem; padding-bottom: 4rem; }
-.sample-data-banner { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem 1.15rem; color: #dce9e7; border: 1px solid rgba(91,214,197,.35); border-radius: .9rem; background: linear-gradient(105deg, rgba(91,214,197,.11), rgba(154,124,255,.08)); }
-.sample-data-banner svg { flex: 0 0 auto; width: 1.15rem; margin-top: .2rem; color: var(--teal); }
 .research-dashboard-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: 1.2rem 0 .7rem; }
 .research-dashboard-heading h2 { margin: .45rem 0 0; font-size: clamp(2.2rem,4vw,3.5rem); letter-spacing: -.05em; line-height: 1; }
 .research-dashboard-heading p { max-width: 44rem; margin: .9rem 0 0; color: var(--muted); }
@@ -385,10 +363,10 @@ button, summary { font: inherit; }
 .pathway span { color: var(--teal); font-size: .75rem; font-weight: 800; }
 .pathway strong { align-self: end; font-size: 1.05rem; }
 .pathway i { position: absolute; right: 1rem; bottom: 1rem; color: var(--gold); font-style: normal; }
-.disclaimer-page { display: grid; gap: 1rem; }
-.disclaimer-page article { padding: 2rem; border-left: 3px solid var(--violet); background: var(--surface); }
-.disclaimer-page h2 { margin-top: 0; }
-.disclaimer-page p { color: var(--muted); margin-bottom: 0; }
+.legal-page { display: grid; gap: 1rem; }
+.legal-page article { padding: 2rem; border-left: 3px solid var(--violet); background: var(--surface); }
+.legal-page h2 { margin-top: 0; }
+.legal-page p { color: var(--muted); margin-bottom: 0; }
 .route-return { padding-top: 3rem; }
 .route-return a { font-weight: 800; color: var(--teal); }
 
@@ -431,7 +409,7 @@ button, summary { font: inherit; }
   .pillar-grid, .principle-grid { grid-template-columns: 1fr; }
   .pillar { min-height: 13rem; }
   .pillar h3 { margin-top: 2.8rem; }
-  .workflow-heading, .research-grid, .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .workflow-heading, .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
   .faq-intro { position: static; }
   .vertical-workflow li { grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr); }
   .pathway { grid-template-columns: repeat(2, 1fr); }
@@ -450,7 +428,7 @@ button, summary { font: inherit; }
   .clinical-orbit { width: 88%; }
   .about-pillar-interaction { min-height: auto; padding-block: 2.5rem; }
   .landing-section { padding: 5rem 0; }
-  .section-intro h2, .workflow-heading h2, .research-grid h2 { font-size: 2.65rem; }
+  .section-intro h2, .workflow-heading h2 { font-size: 2.65rem; }
   .faq-intro h2 { font-size: 2.65rem; }
   .faq-trigger { padding-block: 1.1rem; font-size: 1rem; }
   .faq-content p { padding-left: 2.15rem; }
@@ -465,7 +443,6 @@ button, summary { font: inherit; }
   .workflow-timeline-card { max-width: none; padding: 1.15rem; }
   .workflow-timeline-card h3 { font-size: 1.2rem; }
   .workflow-result { display: grid; padding: 1.2rem .4rem .4rem; }
-  .disclaimer { align-items: start; }
   .workflow-list { grid-template-columns: 1fr; }
   .workflow-list li { grid-template-columns: 2.4rem 1fr; }
   .workflow-list small { grid-column: 2; }

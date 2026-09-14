@@ -5,20 +5,20 @@ export default function TermsAndConditionsPage() {
     <RouteShell
       eyebrow="Legal"
       title="Terms & Conditions"
-      description="A starter terms page for SARA-PRAGYA. It should be reviewed and approved by legal counsel before public production use."
+      description="How SARA-PRAGYA is used."
     >
-      <section className="container disclaimer-page legal-page">
+      <section className="container legal-page">
         <article>
           <h2>Purpose of the platform</h2>
-          <p>SARA-PRAGYA provides research and structured clinical decision-support information. It does not provide a diagnosis, prescribe treatment, or replace examination and judgment by a qualified healthcare professional.</p>
+          <p>SARA-PRAGYA organizes research and structured clinical information.</p>
         </article>
         <article>
           <h2>Appropriate use</h2>
-          <p>Users must use the platform responsibly, maintain the accuracy of information they enter, and ensure that any output is reviewed in its full clinical and research context.</p>
+          <p>Entered information and generated outputs remain available in their full clinical and research context.</p>
         </article>
         <article>
           <h2>Availability and changes</h2>
-          <p>Features, methods, and research outputs may change as the platform develops. This starter notice does not create a clinical, professional, or contractual guarantee.</p>
+          <p>Features, methods, and research outputs evolve as the platform develops.</p>
         </article>
         <article>
           <h2>Contact</h2>

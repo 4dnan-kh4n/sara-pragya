@@ -4,7 +4,7 @@ import { AssessmentWorkspace } from "@/components/assessment-workspace";
 export default function AssessmentPage() {
   return (
     <RouteShell
-      eyebrow="Clinical workspace · Phase 3"
+      eyebrow="Clinical workspace"
       contextId="assessment-context"
       title="Dhātu Sāratā Assessment"
     >

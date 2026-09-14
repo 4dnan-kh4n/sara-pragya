@@ -7,8 +7,7 @@ export default function WorkflowPage() {
     <RouteShell
       eyebrow="Research pathway"
       title="Human verification connects every stage."
-      description="No document extraction or AI interpretation advances silently into the clinical analysis layer."
-      clinical
+      description="Document extraction and AI interpretation move into analysis after human verification."
     >
       <section className="container pathway" aria-label="Planned SARA-PRAGYA workflow">
         {pathway.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong>{index < pathway.length - 1 && <i aria-hidden="true">↓</i>}</div>)}

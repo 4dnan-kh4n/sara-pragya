@@ -6,7 +6,6 @@ import {
   ClipboardCheck,
   Database,
   FileCheck2,
-  FlaskConical,
 } from "lucide-react";
 
 const samplePatterns = [
@@ -32,11 +31,6 @@ const sampleRecords = [
 export function ResearchDashboard() {
   return (
     <section aria-labelledby="sample-dashboard-title" className="container research-dashboard">
-      <div className="sample-data-banner" role="note">
-        <FlaskConical aria-hidden="true" />
-        <span><strong>Presentation preview:</strong> Every figure below is fictional sample data. No patient records are displayed or stored.</span>
-      </div>
-
       <div className="research-dashboard-heading">
         <div>
           <span className="assessment-kicker">Illustrative cohort view</span>
@@ -59,7 +53,6 @@ export function ResearchDashboard() {
           <div className="research-bars" role="img" aria-label="Illustrative pattern distribution: Vata-Pitta 4, Pitta-Kapha 3, Vata 3, Mixed pattern 2.">
             {samplePatterns.map((item) => <div className="research-bar-row" key={item.label}><div><strong>{item.label}</strong><span>{item.count} sample records - {item.share}%</span></div><div aria-hidden="true" className="research-bar-track"><span style={{ width: `${item.share}%` }} /></div></div>)}
           </div>
-          <p className="research-card-note">Counts describe only the fictional presentation cohort. They do not establish prevalence or clinical association.</p>
         </section>
 
         <section aria-labelledby="source-completeness-title" className="research-dashboard-card">
@@ -67,12 +60,12 @@ export function ResearchDashboard() {
           <div className="research-bars" role="img" aria-label="Sample source completeness: Sarata observations 100 percent, clinical history 92 percent, verified PDFs 75 percent.">
             {sourceCompleteness.map((item) => <div className="research-bar-row" key={item.label}><div><strong>{item.label}</strong><span>{item.detail} - {item.value}%</span></div><div aria-hidden="true" className="research-bar-track source"><span style={{ width: `${item.value}%` }} /></div></div>)}
           </div>
-          <p className="research-card-note">Completeness indicates whether a source is present, not whether its content supports a conclusion.</p>
+          <p className="research-card-note">Completeness tracks whether each source is present.</p>
         </section>
       </div>
 
       <section aria-labelledby="sample-register-title" className="research-dashboard-card research-register">
-        <div className="research-card-heading"><div><span>Sample register</span><h3 id="sample-register-title">Illustrative cohort records</h3></div><small>No persistent storage yet</small></div>
+        <div className="research-card-heading"><div><span>Sample register</span><h3 id="sample-register-title">Illustrative cohort records</h3></div></div>
         <div className="research-register-table-wrap"><table><thead><tr><th scope="col">Sample ID</th><th scope="col">Recorded pattern</th><th scope="col">Supporting material</th><th scope="col">Review state</th></tr></thead><tbody>{sampleRecords.map((record) => <tr key={record.id}><th scope="row">{record.id}</th><td>{record.pattern}</td><td>{record.documents}</td><td><span className={record.status === "Ready for review" ? "research-status is-ready" : "research-status"}>{record.status}</span></td></tr>)}</tbody></table></div>
       </section>
 

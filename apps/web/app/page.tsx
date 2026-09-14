@@ -3,7 +3,6 @@ import Link from "next/link";
 import { AboutPillars } from "@/components/about-pillars";
 import { LoopingShloka } from "@/components/looping-shloka";
 import { TextLoop } from "@/components/core/text-loop";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { ScrollWorkflow } from "@/components/scroll-workflow";
 
@@ -12,7 +11,7 @@ const pillars = [
     number: "01",
     title: "Classical Sāratā",
     description:
-      "Structured observations are retained in their Ayurvedic context rather than reduced to a diagnostic label.",
+      "Structured observations are retained in their Ayurvedic context.",
   },
   {
     number: "02",
@@ -33,7 +32,7 @@ const workflowSteps = [
   { title: "Clinical record", description: "Bring together reviewable history, examination, laboratory, and physiology data." },
   { title: "Human verification", description: "Keep missing fields and reviewer checks explicit before any analysis proceeds." },
   { title: "Cross-domain correlation", description: "Explore measured associations across the verified research dataset." },
-  { title: "Research insight", description: "Present evidence-aware outputs for research interpretation, never a diagnosis." },
+  { title: "Research insight", description: "Present evidence-aware outputs for research interpretation." },
 ];
 
 export default function HomePage() {
@@ -52,7 +51,7 @@ export default function HomePage() {
             <h1>
               Classical <TextLoop
                 className="hero-sarata-loop"
-                transition={{ type: "spring", stiffness: 900, damping: 80, mass: 10 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
                 variants={{
                   initial: { y: 20, rotateX: 90, opacity: 0, filter: "blur(4px)" },
                   animate: { y: 0, rotateX: 0, opacity: 1, filter: "blur(0px)" },
@@ -118,38 +117,19 @@ export default function HomePage() {
         <ScrollWorkflow steps={workflowSteps} />
       </section>
 
-      <section className="landing-section landing-research" id="research">
-        <div className="container research-grid">
-          <div>
-            <span className="eyebrow">Research integrity</span>
-            <h2>Association is not causation. Support is not diagnosis.</h2>
-          </div>
-          <div className="research-principles">
-            <p><span>01</span> Correlations are shown only when calculated from the available dataset.</p>
-            <p><span>02</span> Missing information and unverified fields remain explicit.</p>
-            <p><span>03</span> Every future score, prompt, and model will be versioned and auditable.</p>
-          </div>
-        </div>
-      </section>
-
       <section className="landing-section landing-faq" id="faq">
         <div className="container faq-layout">
           <div className="faq-intro">
             <span className="eyebrow">Common questions</span>
-            <h2>Clear about the purpose. Careful about the limits.</h2>
+            <h2>Quick answers about SARA-PRAGYA.</h2>
             <p>
-              A short guide to how SARA-PRAGYA frames classical observation, clinical review, and future research insight.
+              A short guide to classical observation, clinical review, and research insight.
             </p>
           </div>
           <FaqAccordion />
         </div>
       </section>
 
-      <section className="landing-section landing-disclaimer" id="disclaimer">
-        <div className="container">
-          <DisclaimerBanner />
-        </div>
-      </section>
     </main>
   );
 }

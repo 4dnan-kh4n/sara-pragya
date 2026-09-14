@@ -67,7 +67,6 @@ export function AnalysisReport({
             <span>Dhātu profile</span>
             <h3 id="sarata-report-title">Recorded Sāratā observations</h3>
           </div>
-          <p>Correlation evidence is not established in the current dataset.</p>
         </div>
         <div className="report-table-wrap">
           <table>
@@ -99,12 +98,6 @@ export function AnalysisReport({
           <ReportList items={result.result.research_focus} />
         </section>
       </div>
-
-      <section className="report-section report-method" aria-labelledby="report-method-title">
-        <span>Method status</span>
-        <h3 id="report-method-title">Risk score and differential assessment</h3>
-        <p>No validated risk thresholds or differential-assessment model are configured for this research dataset.</p>
-      </section>
     </section>
   );
 }

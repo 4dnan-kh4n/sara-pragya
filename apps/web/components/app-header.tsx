@@ -12,7 +12,6 @@ const navigation = [
   { href: "/#workflow", label: "Workflow" },
   { href: "/research", label: "Research" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/#disclaimer", label: "Disclaimer" },
 ];
 
 function closeMobileNavigation(event: MouseEvent<HTMLAnchorElement>) {

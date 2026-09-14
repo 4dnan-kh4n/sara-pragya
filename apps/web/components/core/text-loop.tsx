@@ -22,7 +22,7 @@ export function TextLoop({ children, className, transition, variants }: TextLoop
 
   return (
     <span className={className}>
-      <AnimatePresence initial={false} mode="wait">
+      <AnimatePresence initial={false}>
         <motion.span
           animate="animate"
           exit="exit"

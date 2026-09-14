@@ -4,7 +4,6 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import HomePage from "@/app/page";
 import AssessmentPage from "@/app/assessment/page";
 import { AppHeader } from "@/components/app-header";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { SymptomsHistoryForm } from "@/components/symptoms-history-form";
 import { ExaminationUpload } from "@/components/examination-upload";
 
@@ -24,18 +23,13 @@ describe("SARA-PRAGYA foundation", () => {
     );
     expect(screen.getByRole("heading", { name: /meaningful clinical insight/i })).toBeVisible();
     expect(screen.queryByRole("link", { name: "Classical Sāratā" })).not.toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /clear about the purpose/i })).toBeVisible();
+    expect(screen.getByRole("heading", { name: /quick answers about sara-pragya/i })).toBeVisible();
+    expect(screen.queryByText(/phase [123]/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/disclaimer/i)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /what is sara-pragya designed to do/i })).toHaveAttribute(
       "aria-expanded",
       "false",
     );
-  });
-
-  it("keeps the full clinical safety statement visible", () => {
-    render(<DisclaimerBanner />);
-
-    expect(screen.getByText(/not an independent diagnostic test/i)).toBeVisible();
-    expect(screen.getByText(/must not replace examination/i)).toBeVisible();
   });
 
   it("exposes semantic desktop and mobile navigation", () => {

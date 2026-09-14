@@ -5,7 +5,7 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
-from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Table, TableStyle
 
 from app.schemas.analysis import ReportRequest
 
@@ -118,13 +118,6 @@ def build_assessment_report(payload: ReportRequest) -> bytes:
             _bullet_list(analysis.observations, styles),
             Paragraph("Research focus", styles["section"]),
             _bullet_list(analysis.research_focus, styles),
-            Spacer(1, 5 * mm),
-            Paragraph(
-                "Research support output only. This report records supplied observations and "
-                "AI-assisted research notes; it does not establish a diagnosis, treatment, "
-                "risk score, or clinical certainty.",
-                styles["notice"],
-            ),
         ]
     )
     document.build(story)
@@ -161,11 +154,6 @@ def _styles() -> dict[str, ParagraphStyle]:
         "document": ParagraphStyle(
             "document", parent=sample["BodyText"], fontName="Helvetica-Bold", fontSize=9.5,
             leading=13, textColor=colors.HexColor("#172554"), spaceBefore=5, spaceAfter=3,
-        ),
-        "notice": ParagraphStyle(
-            "notice", parent=sample["BodyText"], fontSize=8.5, leading=12,
-            textColor=colors.HexColor("#7C2D12"), backColor=colors.HexColor("#FFF7ED"),
-            borderColor=colors.HexColor("#FDBA74"), borderWidth=0.5, borderPadding=6,
         ),
         "footer": ParagraphStyle(
             "footer", parent=sample["BodyText"], fontSize=8, leading=10,

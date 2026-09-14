@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { AnalysisReport } from "@/components/analysis-report";
 
 describe("research report", () => {
-  it("keeps recorded scores separate from unestablished correlations", () => {
+  it("shows the recorded scores without warning-only sections", () => {
     render(<AnalysisReport assessment={{
       sarata_profile: [{ dhatu: "Rasa", score: 2, maximum: 4, percentage: 50 }],
       prakriti_pattern: "Vata",
@@ -18,8 +18,8 @@ describe("research report", () => {
 
     expect(screen.getByRole("heading", { name: "Assessment insight" })).toBeVisible();
     expect(screen.getByRole("cell", { name: "2 / 4" })).toBeVisible();
-    expect(screen.getByText(/correlation evidence is not established/i)).toBeVisible();
-    expect(screen.getByText(/no validated risk thresholds/i)).toBeVisible();
+    expect(screen.queryByText(/correlation evidence is not established/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/no validated risk thresholds/i)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Download PDF" })).toBeVisible();
   });
 });

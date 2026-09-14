@@ -18,7 +18,6 @@ export function AppFooter() {
         </div>
         <div>
           <h2>Governance</h2>
-          <Link href="/#disclaimer">Clinical disclaimer</Link>
           <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/admin">Administration</Link>
@@ -31,7 +30,7 @@ export function AppFooter() {
       </div>
       <div className="container footer-bottom">
         <span>© 2026 SARA-PRAGYA</span>
-        <span>Bhopal, M.P. · Research foundation · Phase 1</span>
+        <span>Bhopal, M.P. · Research foundation</span>
       </div>
     </footer>
   );

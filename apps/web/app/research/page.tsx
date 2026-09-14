@@ -6,7 +6,7 @@ export default function ResearchPage() {
     <RouteShell
       eyebrow="Research workspace · Presentation preview"
       title="Evidence before inference."
-      description="A visual preview of a future cohort workspace. This page uses fictional data only and does not represent clinical findings or research results."
+      description="A visual preview of the cohort workspace using illustrative data."
     >
       <ResearchDashboard />
     </RouteShell>
