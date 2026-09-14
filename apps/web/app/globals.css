@@ -96,6 +96,7 @@ button, summary { font: inherit; }
 .hero-copy h1 > span:not(.hero-sarata-loop) { display: block; color: var(--teal); }
 .hero-description { max-width: 42rem; color: #b8bdca; font-size: 1.13rem; margin: 2rem 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.mobile-hero-orbit { display: none; }
 
 .clinical-orbit {
   position: relative; isolation: isolate; aspect-ratio: 1; width: min(calc(100% + 3rem), 36rem); justify-self: end;
@@ -405,7 +406,11 @@ button, summary { font: inherit; }
   .mobile-navigation nav { position: absolute; right: 0; top: 3.6rem; width: min(20rem, calc(100vw - 2rem)); display: grid; gap: .4rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow); }
   .mobile-navigation nav > a:not(.button) { padding: .65rem; }
   .hero-grid { grid-template-columns: 1fr; gap: 4rem; }
-  .clinical-orbit { justify-self: center; max-width: 31rem; }
+  .desktop-hero-orbit { display: none; }
+  .hero-title-stage { position: relative; isolation: isolate; overflow: clip; }
+  .hero-title-stage h1 { position: relative; z-index: 1; }
+  .mobile-hero-orbit { display: block; position: absolute; left: 50%; top: 50%; width: min(90vw, 31rem); max-width: none; translate: -50% -50%; filter: opacity(.45); pointer-events: none; }
+  .mobile-hero-orbit .orbit-core, .mobile-hero-orbit .orbit-caption { display: none; }
   .pillar-grid, .principle-grid { grid-template-columns: 1fr; }
   .pillar { min-height: 13rem; }
   .pillar h3 { margin-top: 2.8rem; }
@@ -425,7 +430,7 @@ button, summary { font: inherit; }
   .shloka { font-size: 1rem; }
   .shloka-translation { font-size: .83rem; }
   .hero-actions { display: grid; }
-  .clinical-orbit { width: 88%; }
+  .mobile-hero-orbit { width: min(110%, 28rem); }
   .about-pillar-interaction { min-height: auto; padding-block: 2.5rem; }
   .landing-section { padding: 5rem 0; }
   .section-intro h2, .workflow-heading h2 { font-size: 2.65rem; }

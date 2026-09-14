@@ -48,22 +48,25 @@ export default function HomePage() {
             <p className="shloka-translation">
               “Health is described as balance in doṣa, agni, dhātu and mala, with clarity of self, senses, and mind.”
             </p>
-            <h1>
-              Classical <TextLoop
-                className="hero-sarata-loop"
-                transition={{ duration: 0.15, ease: "easeOut" }}
-                variants={{
-                  initial: { y: 20, rotateX: 90, opacity: 0, filter: "blur(4px)" },
-                  animate: { y: 0, rotateX: 0, opacity: 1, filter: "blur(0px)" },
-                  exit: { y: -20, rotateX: -90, opacity: 0, filter: "blur(4px)" },
-                }}
-              >
-                <span>Sāratā.</span>
-                <span lang="sa">सारता।</span>
-              </TextLoop><br />
-              <em>Evidence-informed research.</em>
-              <span>Careful insight.</span>
-            </h1>
+            <div className="hero-title-stage">
+              <HeroOrbit mobile />
+              <h1>
+                Classical <TextLoop
+                  className="hero-sarata-loop"
+                  transition={{ duration: 0.15, ease: "easeOut" }}
+                  variants={{
+                    initial: { y: 20, rotateX: 90, opacity: 0, filter: "blur(4px)" },
+                    animate: { y: 0, rotateX: 0, opacity: 1, filter: "blur(0px)" },
+                    exit: { y: -20, rotateX: -90, opacity: 0, filter: "blur(4px)" },
+                  }}
+                >
+                  <span>Sāratā.</span>
+                  <span lang="sa">सारता।</span>
+                </TextLoop><br />
+                <em>Evidence-informed research.</em>
+                <span>Careful insight.</span>
+              </h1>
+            </div>
             <p className="hero-description">
               SARA-PRAGYA brings classical Dhātu Sāratā observations together with verified physiological and clinical information for responsible prognostic research.
             </p>
@@ -77,21 +80,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="clinical-orbit" aria-label="Animated SARA-PRAGYA correlation illustration">
-            <div className="orbit-grid" aria-hidden="true" />
-            <div className="orbit-ring ring-one" aria-hidden="true" />
-            <div className="orbit-ring ring-two" aria-hidden="true" />
-            <div className="orbit-ring ring-three" aria-hidden="true" />
-            <span className="orbit-marker marker-one" aria-hidden="true" />
-            <span className="orbit-marker marker-two" aria-hidden="true" />
-            <span className="orbit-marker marker-three" aria-hidden="true" />
-            <div className="orbit-core">
-              <span>Dhātu Sāratā</span>
-              <strong>×</strong>
-              <span>Clinical data</span>
-            </div>
-            <p className="orbit-caption">A living research pathway</p>
-          </div>
+          <HeroOrbit />
         </div>
       </section>
 
@@ -131,5 +120,29 @@ export default function HomePage() {
       </section>
 
     </main>
+  );
+}
+
+function HeroOrbit({ mobile = false }: { mobile?: boolean }) {
+  return (
+    <div
+      aria-hidden={mobile || undefined}
+      aria-label={mobile ? undefined : "Animated SARA-PRAGYA correlation illustration"}
+      className={`clinical-orbit ${mobile ? "mobile-hero-orbit" : "desktop-hero-orbit"}`}
+    >
+      <div className="orbit-grid" aria-hidden="true" />
+      <div className="orbit-ring ring-one" aria-hidden="true" />
+      <div className="orbit-ring ring-two" aria-hidden="true" />
+      <div className="orbit-ring ring-three" aria-hidden="true" />
+      <span className="orbit-marker marker-one" aria-hidden="true" />
+      <span className="orbit-marker marker-two" aria-hidden="true" />
+      <span className="orbit-marker marker-three" aria-hidden="true" />
+      <div className="orbit-core">
+        <span>Dhātu Sāratā</span>
+        <strong>×</strong>
+        <span>Clinical data</span>
+      </div>
+      <p className="orbit-caption">A living research pathway</p>
+    </div>
   );
 }
