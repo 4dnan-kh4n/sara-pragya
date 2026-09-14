@@ -409,7 +409,7 @@ button, summary { font: inherit; }
   .desktop-hero-orbit { display: none; }
   .hero-title-stage { position: relative; isolation: isolate; overflow: clip; }
   .hero-title-stage h1 { position: relative; z-index: 1; }
-  .mobile-hero-orbit { display: block; position: absolute; left: 50%; top: 50%; width: min(90vw, 31rem); max-width: none; translate: -50% -50%; filter: opacity(.45); pointer-events: none; }
+  .mobile-hero-orbit { display: block; position: absolute; left: 50%; top: 50%; width: min(90vw, 31rem); max-width: none; translate: -50% -50%; filter: opacity(.55); pointer-events: none; }
   .mobile-hero-orbit .orbit-core, .mobile-hero-orbit .orbit-caption { display: none; }
   .pillar-grid, .principle-grid { grid-template-columns: 1fr; }
   .pillar { min-height: 13rem; }
